@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="selectorsWrapper">
+      <input type="text" id="recName" placeholder="Как зовут рекрутера" />
+      <select name="" id="jobTitleSelector">
+        <option>Должность:</option>
+        <option>Intern Frontend Developer</option>
+        <option>Trainee Frontend Developer</option>
+        <option>Junior Frontend Developer</option>
+        <option>Middle Frontend Developer</option>
+        <option>Senior Frontend Developer</option>
+      </select>
+      <select name="" id="skillsSelector">
+        <option>Стэк для вакансии:</option>
+        <option>JS</option>
+        <option>React</option>
+        <option>Redux</option>
+        <option>React/Redux</option>
+        <option>HTML, CSS, JS (Верстка)</option>
+      </select>
+      <select name="" id="interestsSelector">
+        <option>Чем нравится заниматься:</option>
+        <option>решением алгоритмических задач</option>
+        <option>версткой с использованием различных технологий</option>
+        <option>разработкой интересных приложений</option>
+        <option>решением новых задач</option>
+      </select>
+      <select name="" id="benefitsSelector">
+        <option>Чем заинтересовало:</option>
+        <option>хорошая команда и возможность развиваться</option>
+        <option>стек используемых технологий и возможность развиваться</option>
+        <option>область разработки и использование инновационных технологий</option>
+        <option>область разработки и возможность развиваться</option>
+        <option>возможность попробовать свои силы и получить хороший опыт </option>
+      </select>
+      <button id="btn">Заполнить</button>
+    </div>
+   
+
+    <div class="container"></div>
+
+    <script>
+      
+      let recruterName = "...........";
+      let jubTitle = "........................................";
+      let skills = "......."
+      let interestingThingsToDo = "........";
+      let jobBenefits = ".............."
+      
+
+
+      let coverLatterContainer = document.querySelector(".container");
+      let coverLatterText = document.createElement("div");
+      coverLatterContainer.innerHTML = `
+<div>Приветствую, <p id="recruterName">${recruterName}</p>)</div>  
+</br>                                                                
+<div>Меня зовут Дима. Я претендую на должность <p id="jubTitle">${jubTitle}</p> в вашей компании и обладаю навыками написания кода на <p id="skills">${skills}</p>. В работе использую React и Redux, имею опыт написания нескольких приложений, представленных в портфолио. Прошёл несколько курсов по html,css,js и react, сейчас продолжаю изучать новые технологии под руководством опытного наставника и участвую в создании Opensource приложения связанного со знакомствами и астрологией. В разработке мне больше нравится заниматься <p id="interestingTasks">${interestingThingsToDo}</p> </div>
+</br> 
+<div>ссылка на мой codewars: https://www.codewars.com/users/Dmitry_IS </div>
+</br> 
+<div>ссылка на мой github: https://github.com/Dmis0474  </div>
+</br> 
+<div>В вашей вакансии меня заинтересовало <p id="jobBenefits">${jobBenefits}</p>. Также, участвуя в проектах, мне хотелось бы посредством опытных наставников повысить качество моего кода и поучаствовать в код ревью. Готов приступить к выполнению тестового задания и пообщаться с вами в рамках интервью.</div>
+</br> 
+<div>Спасибо за уделённое мне время! </div>
+</br> 
+<div>Всегда на связи в tg: https://t.me/Di0701 и на почте: Dmis0474@gmail.com</div>
+      `;
+      coverLatterContainer.appendChild(coverLatterText);
+      let nameInput = document.querySelector("#recName");
+      let jobTitleInput = document.querySelector("#jobTitleSelector");
+      let skillsInput = document.querySelector("#skillsSelector");
+      let interestToDoInput = document.querySelector("#interestsSelector");
+      let benefitsInput = document.querySelector("#benefitsSelector");
+  
+
+      
+
+
+      const setOptions = () => {
+        document.querySelector("#recruterName").textContent = nameInput.value;
+        document.querySelector("#jubTitle").textContent = jobTitleInput.value;
+        document.querySelector("#skills").textContent = skillsInput.value;
+        document.querySelector("#interestingTasks").textContent = interestToDoInput.value;
+        document.querySelector("#jobBenefits").textContent = benefitsInput.value;
+        console.log(a);
+      };
+
+      document.querySelector("#btn").addEventListener("click", setOptions);
+
+      nameInput.addEventListener("input", fillValue);
+    </script>
+  </body>
+</html>
+
